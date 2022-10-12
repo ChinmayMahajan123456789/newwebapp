@@ -4,6 +4,7 @@ on:
   push: 
     branches:
       - master
+
   workflow_dispatch:
 
 env: 
@@ -12,11 +13,7 @@ env:
 jobs:
   build:
     runs-on: windows-latest
-
-    defaults:
-     run: 
-       working-directory: newwebapp
-
+          
     steps:
       - name: checkout code
         run: action/newwebapp@v2
