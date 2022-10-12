@@ -1,0 +1,31 @@
+name: continuous Integration
+
+on: 
+  push: 
+    branches:
+      - main 
+  workflow_dispatch: 
+
+env: 
+  DOTNET_VERSION: '6.0.X'
+  PUBLISH_PATH: '.'
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    defaults:
+     run: 
+       working-directory: newwebapp
+
+    steps:
+      - name: checkout code
+        run: action/newwebapp@v2
+
+      - name: set up dotnet 6
+        run: action/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: download dependency
+        run: dotnet restore
