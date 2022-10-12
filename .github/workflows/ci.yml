@@ -26,5 +26,8 @@ jobs:
         with: 
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: building
+        run: dotnet build --configuration Release
+
       - name: download dependency
         run: dotnet restore
