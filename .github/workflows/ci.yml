@@ -16,10 +16,12 @@ jobs:
           
     steps:
       - name: checkout code
-        run: actions/newwebappt@master
+        uses: actions/checkout@master
 
       - name: set up dotnet 6
-        run: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
                   
       - name: building
         run: dotnet build --configuration Release
