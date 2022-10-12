@@ -20,9 +20,7 @@ jobs:
 
       - name: set up dotnet 6
         run: action/setup-dotnet@v2
-        with: 
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-
+                  
       - name: building
         run: dotnet build --configuration Release
 
