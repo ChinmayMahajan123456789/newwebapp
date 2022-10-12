@@ -23,7 +23,7 @@ jobs:
 
       - name: set up dotnet 6
         run: action/setup-dotnet@v2
-        with:
+        with: 
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: download dependency
