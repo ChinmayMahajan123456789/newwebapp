@@ -16,7 +16,7 @@ jobs:
           
     steps:
       - name: checkout code
-        run: action/checkout@master
+        run: action/checkout@v3
 
       - name: set up dotnet 6
         run: action/setup-dotnet@v2
