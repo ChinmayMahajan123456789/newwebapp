@@ -8,8 +8,7 @@ on:
 
 env: 
   DOTNET_VERSION: '6.0.X'
-  PUBLISH_PATH: '.'
-  
+    
 jobs:
   build:
     runs-on: windows-latest
